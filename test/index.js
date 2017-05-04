@@ -909,3 +909,52 @@ describe('Testing KAZ Phone Quick Test', function() {
 	});
 
 });
+
+describe('Testing GBR Phone Quick Test', function() {
+
+	describe('Test 1', function() {
+		var number = '07123456789',
+			country = 'GBR',
+			result = ['+7123456789', 'GBR', '44'];
+		it('returns ' + result, function() {
+			phone(number, country).should.eql(result);
+		});
+	});
+
+	describe('Test 2', function() {
+		var number = '7123456789',
+			country = 'GBR',
+			result = ['+7123456789', 'GBR', '44'];
+		it('returns ' + result, function() {
+			phone(number, country).should.eql(result);
+		});
+	});
+
+	describe('Test 3', function() {
+		var number = '+447123456789',
+			country = 'GBR',
+			result = ['+7123456789', 'GBR', '44'];
+		it('returns ' + result, function() {
+			phone(number, country).should.eql(result);
+		});
+	});
+
+	describe('Test 4', function() {
+		var number = '447123456789',
+			country = 'GBR',
+			result = ['+7123456789', 'GBR', '44'];
+		it('returns ' + result, function() {
+			phone(number, country).should.eql(result);
+		});
+	});
+
+	describe('Test 5', function() {
+		var number = '44(0)7123456789',
+			country = 'GBR',
+			result = ['+7123456789', 'GBR', '44'];
+		it('returns ' + result, function() {
+			phone(number, country).should.eql(result);
+		});
+	});
+
+});
